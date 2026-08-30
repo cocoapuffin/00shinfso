@@ -63,7 +63,7 @@ const App = () => {
     
     if(existingPerson)
     {
-      if (window.confirm(`${name} already added to the phonebook, would you like to replace the old number?`)) {
+      if (window.confirm(`${newName} already added to the phonebook, would you like to replace the old number?`)) {
         const changedPerson= {...existingPerson, number: newNumber}
 
         personService.update(existingPerson.id, changedPerson).then(
@@ -75,7 +75,7 @@ const App = () => {
             setNewNumber('')
             setNotification({
               type: 'success',
-              text: `Updated ${name}`
+              text: `Updated ${newName}`
             })
             setTimeout(() => setNotification(null), 5000)
           })
